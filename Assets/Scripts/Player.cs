@@ -75,13 +75,13 @@ public class Player : MonoBehaviour
         transform.position = pos;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.tag == "Pickup")
+        if (collision.collider.tag == "Pickup")
         {
-            float yPos = Random.Range(3f, 9f);
-            float xPos = Random.Range(-2f, 2f);
-            float zPos = Random.Range(-2f, 2f);
+            float yPos = Random.Range(3f, 13f);
+            float xPos = Random.Range(-3f, 4f);
+            float zPos = Random.Range(-3f, 2f);
 
             Destroy(collision.gameObject);
             GameObject tempLeaf = Instantiate(leaf, transform.position, leaf.transform.rotation, transform);
