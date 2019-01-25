@@ -37,7 +37,6 @@ public class AIMovement : MonoBehaviour
         {
             float diffX = Mathf.Abs(other.contacts[0].point.x - transform.position.x);
             float diffZ = Mathf.Abs(other.contacts[0].point.z - transform.position.z);
-            Instantiate(hitSystem, other.contacts[0].point, hitSystem.transform.rotation);
             if (diffX < 0.1f)
             {
                 direction.z *= -1;
@@ -46,6 +45,7 @@ public class AIMovement : MonoBehaviour
             {
                 direction.x *= -1;
             }
+            //Instantiate(hitSystem, other.contacts[0].point, hitSystem.transform.rotation);
         }
     }
 }
