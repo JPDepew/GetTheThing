@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
 {
     public Text timer;
     public GameObject[] pickups;
+
     float time;
 
     // Start is called before the first frame update
@@ -41,8 +42,12 @@ public class GameMaster : MonoBehaviour
             float xPos = Random.Range(-6.5f, 6.5f);
             float zPos = Random.Range(-4.3f, 4.3f);
             Vector3 position = new Vector3(xPos, 2, zPos);
-            Instantiate(pickups[index], position, transform.rotation);
-            yield return new WaitForSeconds(1);
+            float xRotation = Random.Range(0, 360);
+            float yRotation = Random.Range(0, 360);
+            float zRotation = Random.Range(0, 360);
+            Quaternion.Euler(xRotation,yRotation,zRotation);
+            Instantiate(pickups[index], position, Quaternion.Euler(xRotation, yRotation, zRotation));
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }

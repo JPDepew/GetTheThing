@@ -104,9 +104,10 @@ GameObject:
   - component: {fileID: 2306921249339890766}
   - component: {fileID: 2306921249339890765}
   - component: {fileID: 2306921249339890764}
+  - component: {fileID: 1445258884}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +119,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2306921249339890755}
-  m_LocalRotation: {x: -0.1810414, y: -0.033809967, z: 0.1804386, w: 0.96618986}
+  m_LocalRotation: {x: -0.18104109, y: -0.03381347, z: 0.18044126, w: 0.96618927}
   m_LocalPosition: {x: -3.1, y: 1.577, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -200,3 +201,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1445258884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306921249339890755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daee5e03cb069ce4aa886fec2341a4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 6291328961920844766, guid: bef591f2cf10e0542a0dbee023e9fd18,
+    type: 3}

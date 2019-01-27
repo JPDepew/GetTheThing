@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     public float lookSpeed = 1;
     Vector3 direction;
     CharacterController controller;
+    public GameObject explosion;
+
+    public delegate void ObjectCaptured();
+    public static event ObjectCaptured onObjectCaptured;
 
     // Start is called before the first frame update
     void Start()
@@ -83,9 +87,12 @@ public class Player : MonoBehaviour
             float xPos = Random.Range(-3f, 4f);
             float zPos = Random.Range(-3f, 2f);
 
+            onObjectCaptured?.Invoke();
+
             Destroy(collision.gameObject);
             GameObject tempLeaf = Instantiate(leaf, transform.position, leaf.transform.rotation, transform);
             tempLeaf.transform.localPosition = new Vector3(xPos, yPos, zPos);
+            Instantiate(explosion, transform.position, transform.rotation);
         }
     }
 }

@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 7062688862943175715}
   - component: {fileID: 9067358730338502023}
   - component: {fileID: 5237566513513344792}
+  - component: {fileID: 29905027}
   m_Layer: 0
   m_Name: Sphere (7)
   m_TagString: Pickup
@@ -118,7 +119,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6872838879324021765}
-  m_LocalRotation: {x: 0.25754023, y: 0.6585386, z: -0.2575403, w: 0.6585386}
+  m_LocalRotation: {x: 0.25754142, y: 0.6585381, z: -0.25754145, w: 0.65853804}
   m_LocalPosition: {x: -0.62, y: 1.37, z: -2.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -200,3 +201,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &29905027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872838879324021765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daee5e03cb069ce4aa886fec2341a4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 6291328961920844766, guid: bef591f2cf10e0542a0dbee023e9fd18,
+    type: 3}
