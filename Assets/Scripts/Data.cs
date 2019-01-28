@@ -39,5 +39,6 @@ public class Data : MonoBehaviour
     void OnObjectCaptured()
     {
         numberOfObjects++;
+        Debug.Log("Object captrued " + numberOfObjects);
     }
 }

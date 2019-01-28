@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.tag == "Pickup")
         {
-            float yPos = Random.Range(3f, 13f);
+            float yPos = Random.Range(4f, 13f);
             float xPos = Random.Range(-3f, 4f);
             float zPos = Random.Range(-3f, 2f);
 
