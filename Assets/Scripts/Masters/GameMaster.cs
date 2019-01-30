@@ -9,14 +9,14 @@ public class GameMaster : MonoBehaviour
     public Text timer;
     public GameObject[] pickups;
 
-    AudioSource audioSource;
+    AudioSource[] audioSources;
     float time;
 
     // Start is called before the first frame update
     void Start()
     {
         time = 30;
-        audioSource = GetComponent<AudioSource>();
+        audioSources = GetComponents<AudioSource>();
         StartCoroutine(TurnTextRedTimer());
         StartCoroutine(InstantiateObjects());
     }
@@ -32,11 +32,11 @@ public class GameMaster : MonoBehaviour
     {
         yield return new WaitForSeconds(27);
         timer.color = Color.red;
-        audioSource.Play();
+        audioSources[0].Play();
         yield return new WaitForSeconds(1);
-        audioSource.Play();
+        audioSources[0].Play();
         yield return new WaitForSeconds(1);
-        audioSource.Play();
+        audioSources[0].Play();
         yield return new WaitForSeconds(0.9f);
         SceneManager.LoadScene(3);
     }

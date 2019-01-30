@@ -5,8 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MenuMaster : MonoBehaviour
 {
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void StartGame()
     {
+        StartCoroutine(DelayStart());
+    }
+
+    IEnumerator DelayStart()
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene(2);
     }
 

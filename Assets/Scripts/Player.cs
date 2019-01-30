@@ -53,19 +53,19 @@ public class Player : MonoBehaviour
         float currentSpeed = 0;
         float rotateAmount = 0;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             currentSpeed = speed;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             currentSpeed = -speed;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rotateAmount -= lookSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             rotateAmount += lookSpeed * Time.deltaTime;
         }
@@ -79,9 +79,9 @@ public class Player : MonoBehaviour
         transform.position = pos;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.tag == "Pickup")
+        if (collision.tag == "Pickup")
         {
             float yPos = Random.Range(4f, 13f);
             float xPos = Random.Range(-3f, 4f);

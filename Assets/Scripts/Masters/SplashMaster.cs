@@ -12,7 +12,7 @@ public class SplashMaster : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(1);
     }
 }
