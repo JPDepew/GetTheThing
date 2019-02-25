@@ -10,34 +10,46 @@ public class GameMaster : MonoBehaviour
     public GameObject[] pickups;
 
     AudioSource[] audioSources;
-    float time;
+    int time;
 
     // Start is called before the first frame update
     void Start()
     {
         time = 30;
+        timer.text = time.ToString("F0");
         audioSources = GetComponents<AudioSource>();
+        StartCoroutine(Timer());
         StartCoroutine(TurnTextRedTimer());
         StartCoroutine(InstantiateObjects());
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    time -= Time.deltaTime;
+    //    timer.text = time.ToString("F2");
+    //}
+
+    IEnumerator Timer()
     {
-        time -= Time.deltaTime;
-        timer.text = time.ToString("F2");
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            time--;
+            timer.text = time.ToString("F0");
+        }
     }
 
     IEnumerator TurnTextRedTimer()
     {
-        yield return new WaitForSeconds(27);
+        yield return new WaitForSeconds(27.25f);
         timer.color = Color.red;
         audioSources[0].Play();
         yield return new WaitForSeconds(1);
         audioSources[0].Play();
         yield return new WaitForSeconds(1);
         audioSources[0].Play();
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(3);
     }
 
